@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Heart</title>
+<style>
+:root {
+  --light-pink-color: hsl(350, 100%, 97%);
+  --pink-color: hsl(350, 100%, 88%);
+  font-size: 100px;
+}
+body {
+  background-color: var(--light-pink-color);
+}
+#heart {
+  animation-duration: 1.1s;
+  animation-iteration-count: infinite;
+  animation-name: beat;
+  animation-timing-function: linear;
+  background-color: var(--pink-color);
+  height: 1rem;
+  margin: 3rem auto;
+  position: relative;
+  transform: rotate(45deg);
+  width: 1rem;
+}
+#heart::before {
+  background-color: var(--pink-color);
+  border-radius: 50%;
+  content: "";
+  height: 1rem;
+  left: 0;
+  position: absolute;
+  top: -0.5rem;
+  width: 1rem;
+}
+#heart::after {
+  background-color: var(--pink-color);
+  border-radius: 50%;
+  content: "";
+  height: 1rem;
+  left: -0.5rem;
+  position: absolute;
+  top: 0;
+  width: 1rem;
+}
+@keyframes beat {
+  0% {
+    transform: rotate(45deg) scale(1.0);
+  }
+  10% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  20% {
+    transform: rotate(45deg) scale(1.0);
+  }
+  30% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  40% {
+    transform: rotate(45deg) scale(1.0);
+  }
+}
+</style>
+</head>
+<body>
+<div id="heart"></div>
+</body>
+</html>
